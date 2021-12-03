@@ -193,18 +193,19 @@ poetry run python bot.py
 ```
 ![P1](pic/p1.png)
 
-现在，它已经可以在收到任意私聊消息的时候回复 Hello World 了，但当然，这并不是我们想要的，我们先将私聊消息的监听器 `"FriendMessage"` 修改为 `GroupMessage` 并删除 `friend: Friend`
+现在，它已经可以在收到任意私聊消息的时候回复 Hello World 了，但当然，这并不是我们想要的，我们先将私聊消息的监听器 `"FriendMessage"` 修改为 `GroupMessage`
 
 ```python
 ...
+from graia.ariadne.model import Group
 from graia.ariadne.event.message import GroupMessage
 ...
 
 
 ...
 @bcc.receiver(GroupMessage)
-async def friend_message_listener(app: Ariadne):
-    await app.sendMessage(friend, MessageChain.create([Plain("Hello, World!")]))
+async def friend_message_listener(app: Ariadne, group: Group):
+    await app.sendMessage(group, MessageChain.create([Plain("Hello, World!")]))
 ...
 ```
 重新启动 Bot ，此时 Bot 将监听任意群聊的任意消息并回复 Hello World，但我们想要的效果是收到指令 `涩图` 后才触发消息，所以我们需要添加消息匹配器 `Twilight` 来精准的匹配到群友发送的 `涩图` 指令。
