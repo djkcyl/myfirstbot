@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "myfirstbot"
+version = "0.1.0"
+description = ""
+authors = ["djkcyl <cyl@cyllive.cn>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+graia-ariadne = "^0.4.7"
+httpx = "^0.21.1"
+graia-saya = "^0.0.13"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+black = {version = "^21.11b1", allow-prereleases = true}
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
