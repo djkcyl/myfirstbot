@@ -191,8 +191,7 @@ poetry run python bot.py
 2021-12-03 10:49:45.350 | INFO     | graia.ariadne.model:log_friend_message:114 - 2119799445: [A60(2948531755)] -> '你好！'
 2021-12-03 10:49:45.478 | INFO     | graia.ariadne.app:sendFriendMessage:114 - [BOT 2119799445] Friend(2948531755) <- Hello, World!
 ```
-
-[!P1](pic/p1.png)
+![P1](pic/p1.png)
 
 现在，它已经可以在收到任意私聊消息的时候回复 Hello World 了，但当然，这并不是我们想要的，我们先将私聊消息的监听器 `"FriendMessage"` 修改为 `GroupMessage` 并删除 `friend: Friend`
 
@@ -230,7 +229,7 @@ async def setu(app: Ariadne, group: Group):
 ```
 此时再向群内发送**其他**消息 Bot 将不会继续回复 Hello World 了。
 
-[!P2](pic/p2.png)
+![P2](pic/p2.png)
 
 这样，我们的消息匹配部分以及群消息发送就大功告成了，接着实现剩下的需求
 
@@ -267,8 +266,6 @@ resp = httpx.get("http://a60.one:404/")
 print(resp.text)
 ```
 ```json
-# poetry run python text.py
-
 {"code":200,"data":{"imgs":[{"id":9128,"pic":"74927386_p2","name":"アズレン落書詰め","tags":"アズールレーン,碧蓝航线,時雨(アズールレーン),Shigure (Azur Lane),狼耳,wolf ears,アズールレーン500users入り,Azur Lane 500+ bookmarks","userid":18395363,"username":"蝉丸せみ","sanity_level":4,"url":"https://pic.a60.one:8443/74927386_p2.jpg"}]},"time":"10ms"}
 ```
 我们可以很清楚的看到，这是一个 json 结构的内容，这样我们可以利用 httpx 的 `.json()` 来快速的将获取到的响应体转换为 Python 能用的 Dict 类型，也为了后续的方便使用，将修改内容为
@@ -344,7 +341,7 @@ async def setu(app: Ariadne, group: Group, member: Member):
 
 然后我们再次运行 Bot 去群里看看结果吧！
 
-[!P3](pic/p3.png)
+![P3](pic/p3.png)
 
 ## 更多的玩法
 
@@ -425,7 +422,7 @@ import random
 
 启动 Bot 试试吧
 
-[!P4](pic/p4.png)
+![P4](pic/p4.png)
 
 可以看到，假消息链已经构建出来了，让我们再添加一些更多的内容
 
@@ -504,7 +501,7 @@ async def setu(app: Ariadne, group: Group, tag1: WildcardMatch, tag2: WildcardMa
 
 再次运行你的 Bot 检验下是否可以使用了吧！
 
-[!P5](pic/p5.png)
+![P5](pic/p5.png)
 
 
 ## 将功能模块化
