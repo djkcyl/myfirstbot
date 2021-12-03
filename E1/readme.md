@@ -45,7 +45,7 @@ Compatible Python versions [^3.8]:
 ```
 选择你需要的 Python 版本，例如 `^3.8` 或 `^3.9` ，这里我们选择 `^3.9` 。
 
-紧接着，Poetry 会询问你是否需要定义依赖，由于国内网络访问 PyPi 的情况较差，我们输入 no 直接跳过。
+紧接着，Poetry 会询问你是否需要定义依赖，由于网络问题，访问 PyPi 的情况较差，我们输入 no 直接跳过。
 ```shell
 Would you like to define your main dependencies interactively? (yes/no) [yes] no
 Would you like to define your development dependencies interactively? (yes/no) [yes] no
@@ -72,7 +72,7 @@ build-backend = "poetry.core.masonry.api"
 
 Do you confirm generation? (yes/no) [yes] yes
 ```
-> 由于大陆区域的网络问题，为了防止后续的包解析及安装等待时间过长，可以预先修改项目根目录下的 `pyproject.toml` 来添加国内镜像加速站，打开该文件后在文件末尾添加如下内容
+> 为了防止后续的包解析及安装等待时间过长，可以预先修改项目根目录下的 `pyproject.toml` 来添加国内镜像加速站，打开该文件后在文件末尾添加如下内容
 > ```toml
 > [[tool.poetry.source]]
 > name = "tsinghua"
