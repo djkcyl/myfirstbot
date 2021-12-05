@@ -79,10 +79,10 @@ Do you confirm generation? (yes/no) [yes] yes
 > url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 > default = true
 > ```
-当然，仅有一个环境是不够的，我们还需要向环境内安装我们需要的 `Graia Airadne` 及其他依赖，不过在此之前，还需要先将容器创建出来。
+当然，仅有一个环境是不够的，我们还需要向环境内安装我们需要的 `Graia Airadne` 及其他依赖，不过在此之前，还需要先将容器创建出来。（由于历史原因，教程里使用 0.4.7 版本的 Ariadne）
 ```shell
 poetry env use 3.9
-poetry add graia-ariadne
+poetry add graia-ariadne@0.4.7
 ```
 将返回类似如下的内容
 > 你看到的返回内容并不一定与示例中的内容完全相同
