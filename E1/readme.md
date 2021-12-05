@@ -204,7 +204,7 @@ from graia.ariadne.event.message import GroupMessage
 
 ...
 @bcc.receiver(GroupMessage)
-async def friend_message_listener(app: Ariadne, group: Group):
+async def group_message_listener(app: Ariadne, group: Group):
     await app.sendMessage(group, MessageChain.create([Plain("Hello, World!")]))
 ...
 ```
